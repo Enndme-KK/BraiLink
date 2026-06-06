@@ -21,6 +21,21 @@
 
 ---
 
+## 📸 应用截图
+
+<div align="center">
+  <img src="screenshots/01-select-identity.png" width="200" alt="身份选择" />
+  <img src="screenshots/02-login.png" width="200" alt="登录" />
+  <img src="screenshots/04-ai-chat.png" width="200" alt="AI智能问诊" />
+  <img src="screenshots/05-ct-scanner.png" width="200" alt="CT影像扫描" />
+</div>
+
+<p align="center">
+  <sub>身份选择 | 登录 | AI 智能问诊 | CT 影像扫描</sub>
+</p>
+
+---
+
 ## 🏗️ 技术架构
 
 ```
@@ -165,6 +180,21 @@ npm run dev:h5
 ## 📖 Introduction
 
 **BraiLink** is an AI-powered medical assistant application designed for brain tumor diagnosis. It leverages deep learning (TransUNet) for automated MRI-based brain tumor segmentation and integrates a large language model (DeepSeek) for intelligent medical consultation. The system supports three user roles — **Doctors**, **Patients**, and **Family Members** — providing a comprehensive bridge for brain tumor diagnosis and communication.
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="screenshots/01-select-identity.png" width="200" alt="Role Selection" />
+  <img src="screenshots/02-login.png" width="200" alt="Login" />
+  <img src="screenshots/04-ai-chat.png" width="200" alt="AI Medical Chat" />
+  <img src="screenshots/05-ct-scanner.png" width="200" alt="CT Scanner" />
+</div>
+
+<p align="center">
+  <sub>Role Selection | Login | AI Medical Chat | CT Scanner</sub>
+</p>
 
 ---
 
