@@ -3,9 +3,11 @@
 </p>
 
 <h1 align="center">BraiLink</h1>
-<p align="center">AI-Powered Brain Tumor Diagnosis Assistant<br/>AI 驱动的脑瘤智能辅助诊断系统</p>
+<p align="center">AI-Powered Brain Tumor Diagnosis Assistant</p>
 
 <p align="center">
+  <a href="README.zh-CN.md">🇨🇳 中文</a>
+  &nbsp;|&nbsp;
   <img src="https://img.shields.io/badge/backend-Django%20REST-0A5CFF?style=flat-square&logo=django" />
   <img src="https://img.shields.io/badge/frontend-UniApp-00C2D7?style=flat-square&logo=vue.js" />
   <img src="https://img.shields.io/badge/AI-DeepSeek%20%2B%20TransUNet-1FB877?style=flat-square" />
@@ -14,119 +16,114 @@
 
 ---
 
-## 📖 Introduction | 项目简介
+## 📖 Introduction
 
 **BraiLink** is an AI-powered medical assistant application designed for brain tumor diagnosis. It leverages deep learning (TransUNet) for automated MRI-based brain tumor segmentation and integrates a large language model (DeepSeek) for intelligent medical consultation. The system supports three user roles — **Doctors**, **Patients**, and **Family Members** — providing a comprehensive bridge for brain tumor diagnosis and communication.
 
-**BraiLink（慧联脑图）** 是一款基于人工智能的脑瘤辅助诊断医疗助手。系统采用 TransUNet 深度学习模型实现 MRI 脑瘤自动分割，并集成 DeepSeek 大语言模型提供智能医疗咨询。系统支持 **医生**、**患者**、**家属**三种角色，为脑瘤诊疗提供一站式数字化桥梁。
-
 ---
 
-## 🏗️ Architecture | 技术架构
+## 🏗️ Architecture
 
 ```
 BraiLink/
 ├── code/
-│   ├── backend/                 # Django REST Framework 后端
-│   │   ├── accounts/            # 用户认证 (医生/患者/家属)
-│   │   ├── patients/            # 患者管理
-│   │   ├── doctors/             # 医生管理
-│   │   ├── families/            # 家属管理
-│   │   ├── appointments/        # 预约挂号
-│   │   ├── medical_records/     # 电子病历
-│   │   ├── ai_chat/             # AI 医疗咨询
-│   │   ├── ml_service/          # ML 推理服务 (TransUNet + DeepSeek)
-│   │   ├── notifications/       # 系统通知
-│   │   └── brain_tumor_api/     # Django 项目配置
-│   ├── frontend/                # UniApp 跨平台前端
-│   │   ├── pages/               # 20+ 业务页面
-│   │   ├── components/          # 可复用组件
-│   │   ├── config/              # 环境配置
-│   │   └── utils/               # 工具函数
-│   └── image_predict/           # ML 模型与推理脚本
-└── data/                        # 训练数据 (MRI 序列: T1/T1ce/T2/FLAIR/Seg)
+│   ├── backend/                 # Django REST Framework
+│   │   ├── accounts/            # User authentication (Doctor/Patient/Family)
+│   │   ├── patients/            # Patient management
+│   │   ├── doctors/             # Doctor management
+│   │   ├── families/            # Family management
+│   │   ├── appointments/        # Appointment scheduling
+│   │   ├── medical_records/     # Electronic health records
+│   │   ├── ai_chat/             # AI medical consultation
+│   │   ├── ml_service/          # ML inference (TransUNet + DeepSeek)
+│   │   ├── notifications/       # System notifications
+│   │   └── brain_tumor_api/     # Django project config
+│   ├── frontend/                # UniApp cross-platform frontend
+│   │   ├── pages/               # 20+ pages
+│   │   ├── components/          # Reusable components
+│   │   ├── config/              # Environment config
+│   │   └── utils/               # Utility functions
+│   └── image_predict/           # ML models & inference scripts
+└── data/                        # Training data (MRI: T1/T1ce/T2/FLAIR/Seg)
 ```
 
 ---
 
-## ✨ Features | 核心功能
+## ✨ Features
 
-| Feature | 功能 | Description |
-|---------|------|-------------|
-| 🧠 **AI Tumor Segmentation** | AI 肿瘤分割 | TransUNet-based automated brain tumor segmentation from multi-sequence MRI |
-| 💬 **AI Medical Chat** | AI 智能问诊 | DeepSeek-powered medical consultation with patient history context |
-| 📋 **EHR Management** | 电子病历管理 | Complete electronic health records for patients |
-| 📅 **Appointments** | 在线预约 | Online appointment scheduling between patients and doctors |
-| 👨‍👩‍👧 **Family Binding** | 家属绑定 | Family members can bind to patients for assisted management |
-| 🔔 **Notifications** | 消息通知 | Real-time system notifications for appointments and reports |
-| 📰 **Medical News** | 医学资讯 | Curated medical news feed with category filtering |
-| 🌐 **Cross-Platform** | 跨平台 | UniApp-based: Android, iOS, H5, WeChat Mini Program |
+| Feature | Description |
+|---------|-------------|
+| 🧠 **AI Tumor Segmentation** | TransUNet-based automated brain tumor segmentation from multi-sequence MRI |
+| 💬 **AI Medical Chat** | DeepSeek-powered medical consultation with patient history context |
+| 📋 **EHR Management** | Complete electronic health records for patients |
+| 📅 **Appointments** | Online appointment scheduling between patients and doctors |
+| 👨‍👩‍👧 **Family Binding** | Family members can bind to patients for assisted management |
+| 🔔 **Notifications** | Real-time system notifications for appointments and reports |
+| 📰 **Medical News** | Curated medical news feed with category filtering |
+| 🌐 **Cross-Platform** | UniApp-based: Android, iOS, H5, WeChat Mini Program |
 
 ---
 
-## 🚀 Quick Start | 快速开始
+## 🚀 Quick Start
 
-### Prerequisites | 环境要求
+### Prerequisites
 
 - **Python** 3.10+
 - **Node.js** 18+
 - **HBuilderX** (for UniApp mobile build)
 - **Redis** (optional, for Celery async tasks)
 
-### Backend | 后端
+### Backend
 
 ```bash
-# 1. Enter backend directory
 cd code/backend
 
-# 2. Create virtual environment
+# Create virtual environment
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
-# 3. Install dependencies
+# Install dependencies
 pip install -r requirements.txt
 
-# 4. Configure environment variables
+# Configure environment
 cp .env.example .env
-# Edit .env and set your DEEPSEEK_API_KEY and other configs
+# Edit .env — set DEEPSEEK_API_KEY and other configs
 
-# 5. Run database migrations
+# Run migrations
 python manage.py migrate
 
-# 6. (Optional) Load demo data
+# (Optional) Load demo data
 python init_demo_data.py
 
-# 7. Start development server
+# Start server
 python manage.py runserver 0.0.0.0:8000
 ```
 
-### Frontend | 前端
+### Frontend
 
 ```bash
-# 1. Enter frontend directory
 cd code/frontend
 
-# 2. Install dependencies
-npm install  # or yarn
+# Install dependencies
+npm install
 
-# 3. Configure API endpoint
-# Edit config/env.config.js to set your backend server address
+# Configure API endpoint in config/env.config.js
 
-# 4. Run in browser (H5)
+# Run in browser (H5)
 npm run dev:h5
 
-# 5. Or open in HBuilderX for Android/iOS/WeChat build
+# Or open in HBuilderX for Android / iOS / WeChat Mini Program build
 ```
 
-### ML Model Setup | 模型配置
+### ML Model
 
 Download the pre-trained TransUNet model weights and place them in `code/image_predict/models/`.
 
 ---
 
-## ⚙️ Environment Variables | 环境变量
+## ⚙️ Environment Variables
 
-Copy `.env.example` to `.env` and configure the following:
+Copy `.env.example` to `.env` and configure:
 
 | Variable | Description | Default |
 |----------|-------------|---------|
@@ -139,34 +136,23 @@ Copy `.env.example` to `.env` and configure the following:
 
 ---
 
-## 👥 User Roles | 用户角色
+## 👥 User Roles
 
-| Role | 角色 | Capabilities |
-|------|------|-------------|
-| 🩺 **Doctor** | 医生 | Patient management, image diagnosis, medical record review |
-| 🏥 **Patient** | 患者 | AI consultation, appointment booking, health records |
-| 👨‍👩‍👧 **Family** | 家属 | Assisted patient management, medical record viewing |
-
----
-
-## 📸 Screenshots | 界面预览
-
-<p align="center">
-  <em>Login · 登录</em> &nbsp;|&nbsp;
-  <em>Identity Selection · 身份选择</em> &nbsp;|&nbsp;
-  <em>AI Chat · AI 咨询</em> &nbsp;|&nbsp;
-  <em>CT Scanner · 影像扫描</em>
-</p>
+| Role | Capabilities |
+|------|-------------|
+| 🩺 **Doctor** | Patient management, image diagnosis, medical record review |
+| 🏥 **Patient** | AI consultation, appointment booking, health records |
+| 👨‍👩‍👧 **Family** | Assisted patient management, medical record viewing |
 
 ---
 
-## 📄 License | 许可证
+## 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-## 👤 Author | 作者
+## 👤 Author
 
 **Enndme-KK** — [GitHub](https://github.com/Enndme-KK)
 
