@@ -10,6 +10,10 @@
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/status-under%20development-orange?style=for-the-badge" alt="Under Development" />
+</p>
+
 <details open>
 <summary><b>🇨🇳 中文</b></summary>
 
