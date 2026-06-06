@@ -1,0 +1,26 @@
+	/* 顶部导航栏 */
+	.top{
+		width: 100%;
+		padding-bottom: 20px;
+		background: linear-gradient(to left,rgba(7, 218, 211, 1),rgba(19, 219, 162, 0.47));	
+		display: flex;
+		box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+	}
+	/* 返回按钮 */
+	.quit{
+		padding-top: 28px;
+		padding-left: 12px;
+	}
+	/* 顶部导航栏提示信息的div大小 */
+	.headText{
+		width: 100%;
+	}
+	/* 顶部导航栏文字css */
+	.head_text_style{
+		font-size: 24px;
+		font-family: '黑体';
+		font-weight: 700;
+		color: #3D3D3D;
+		padding-top: 26px;
+		text-align: center;
+	}

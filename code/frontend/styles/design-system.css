@@ -1,0 +1,215 @@
+/* ============================================================
+   BraiLink · 设计系统 (Design System)
+   主题:Clinical Precision — 临床精密美学
+   隐喻:CT/MRI 阅片灯箱 + 脑神经网络
+   ------------------------------------------------------------
+   用法:在 App.vue 全局 @import 本文件,所有页面共享 token。
+   不要在这里写页面专属样式,只放可复用的变量与原子类。
+   ============================================================ */
+
+:root {
+  /* —— 品牌主色:深空医学蓝 —— */
+  --ds-brand: #0A5CFF;          /* 主操作色 */
+  --ds-brand-deep: #0742C4;     /* 按下/强调 */
+  --ds-brand-soft: #E8F0FF;     /* 浅底/选中背景 */
+  --ds-brand-ghost: rgba(10, 92, 255, 0.08);
+
+  /* —— 点缀色:造影剂青(签名色)—— */
+  --ds-cyan: #00C2D7;           /* 扫描线 / 活跃状态 */
+  --ds-cyan-soft: #DFF7FA;
+  --ds-cyan-glow: rgba(0, 194, 215, 0.35);
+
+  /* —— 语义色 —— */
+  --ds-success: #1FB877;
+  --ds-warning: #F5A623;
+  --ds-danger:  #FF4D5E;
+  --ds-info:    #0A5CFF;
+
+  /* —— 墨色文字阶梯(偏冷的深蓝灰,非纯黑)—— */
+  --ds-ink-1: #0C1733;          /* 主标题 */
+  --ds-ink-2: #2B3658;          /* 正文 */
+  --ds-ink-3: #69728C;          /* 次要 */
+  --ds-ink-4: #A2A9BC;          /* 占位/禁用 */
+
+  /* —— 背景层次 —— */
+  --ds-bg:        #F4F6FB;      /* 页面底 */
+  --ds-bg-sunken: #EDF0F7;      /* 凹陷区/输入底 */
+  --ds-surface:   #FFFFFF;      /* 卡片面 */
+  --ds-surface-2: #FBFCFE;      /* 次级卡片 */
+  --ds-hairline:  rgba(12, 23, 51, 0.07);  /* 极细分隔线 */
+
+  /* —— 深色阅片模式(统一深色页面)—— */
+  --ds-dark-bg:       #0A0F1E;       /* 页面底色 */
+  --ds-dark-surface:  #111827;       /* 卡片/导航栏面 */
+  --ds-dark-elevated: #0F1D32;       /* 弹窗/浮层面 */
+  --ds-dark-border:   rgba(255,255,255,0.08); /* 统一边框 */
+  --ds-dark-ink:      #E8ECF6;       /* 主文字 */
+  --ds-dark-ink-2:    #8B95A5;       /* 次要文字 */
+  --ds-dark-ink-3:    #5A6A7E;       /* 辅助文字 */
+
+  /* —— 渐变(冷调,杜绝紫色)—— */
+  --ds-grad-brand: linear-gradient(135deg, #0A5CFF 0%, #00C2D7 100%);
+  --ds-grad-deep:  linear-gradient(160deg, #0C1733 0%, #143A8C 100%);
+  --ds-grad-light: linear-gradient(180deg, #FFFFFF 0%, #F4F6FB 100%);
+  --ds-grad-cyan:  linear-gradient(135deg, #00C2D7 0%, #1FB877 100%);
+
+  /* —— 圆角(克制、统一)—— */
+  --ds-r-xs: 8px;
+  --ds-r-sm: 12px;
+  --ds-r-md: 16px;
+  --ds-r-lg: 22px;
+  --ds-r-xl: 28px;
+  --ds-r-pill: 999px;
+
+  /* —— 间距(4 的倍数)—— */
+  --ds-sp-1: 4px;
+  --ds-sp-2: 8px;
+  --ds-sp-3: 12px;
+  --ds-sp-4: 16px;
+  --ds-sp-5: 20px;
+  --ds-sp-6: 24px;
+  --ds-sp-8: 32px;
+  --ds-sp-10: 40px;
+
+  /* —— 阴影(冷色调投影,带品牌色染色)—— */
+  --ds-shadow-sm: 0 2px 8px rgba(12, 23, 51, 0.05);
+  --ds-shadow-md: 0 6px 20px rgba(12, 23, 51, 0.08);
+  --ds-shadow-lg: 0 14px 40px rgba(12, 23, 51, 0.12);
+  /* 按钮阴影统一去除（用户要求纯色按钮） */
+  --ds-shadow-brand: none;
+  --ds-shadow-cyan: none;
+
+  /* —— 字体 —— */
+  --ds-font: -apple-system, BlinkMacSystemFont, "PingFang SC",
+             "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  /* 数字/编号等宽,用于报告号、数据 */
+  --ds-font-mono: "SF Mono", "JetBrains Mono", "Roboto Mono", ui-monospace,
+                  "Menlo", monospace;
+
+  /* —— 动效曲线 —— */
+  --ds-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ds-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================================
+   原子组件类(全站复用)
+   ============================================================ */
+
+/* —— 页面骨架 —— */
+.ds-page {
+  min-height: 100vh;
+  background: var(--ds-bg);
+  font-family: var(--ds-font);
+  color: var(--ds-ink-2);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* —— 卡片 —— */
+.ds-card {
+  background: var(--ds-surface);
+  border-radius: var(--ds-r-md);
+  box-shadow: var(--ds-shadow-md);
+  overflow: hidden;
+}
+.ds-card-flat {
+  background: var(--ds-surface);
+  border-radius: var(--ds-r-md);
+  border: 1px solid var(--ds-hairline);
+}
+
+/* —— 主按钮:渐变 + 品牌投影 —— */
+.ds-btn {
+  height: 52px;
+  border-radius: var(--ds-r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: transform 0.18s var(--ds-ease), box-shadow 0.18s var(--ds-ease), opacity 0.18s;
+}
+.ds-btn-primary {
+  background: var(--ds-grad-brand);
+  color: #fff;
+  box-shadow: var(--ds-shadow-brand);
+}
+.ds-btn-primary:active {
+  transform: scale(0.97);
+  
+}
+.ds-btn-ghost {
+  background: var(--ds-brand-soft);
+  color: var(--ds-brand);
+}
+.ds-btn-ghost:active { transform: scale(0.97); opacity: 0.85; }
+
+/* —— 胶囊标签 —— */
+.ds-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 11px;
+  border-radius: var(--ds-r-pill);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.ds-tag-brand { background: var(--ds-brand-soft); color: var(--ds-brand); }
+.ds-tag-cyan  { background: var(--ds-cyan-soft); color: #008695; }
+
+/* —— 签名元素:CT 扫描线 —— */
+/* 给任意容器加 .ds-scanline,内部会有一条青色横线循环上下扫动 */
+.ds-scanline { position: relative; overflow: hidden; }
+.ds-scanline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--ds-cyan), transparent);
+  box-shadow: 0 0 12px 2px var(--ds-cyan-glow);
+  animation: ds-scan 3.2s var(--ds-ease) infinite;
+  opacity: 0.85;
+}
+@keyframes ds-scan {
+  0%   { transform: translateY(0); opacity: 0; }
+  12%  { opacity: 0.9; }
+  88%  { opacity: 0.9; }
+  100% { transform: translateY(var(--ds-scan-h, 200px)); opacity: 0; }
+}
+
+/* —— 签名纹理:神经网格(极淡的点阵)—— */
+.ds-grid-bg {
+  background-image:
+    radial-gradient(circle, rgba(10, 92, 255, 0.06) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+}
+
+/* —— 入场动画(错峰显现)—— */
+.ds-rise { animation: ds-rise 0.5s var(--ds-ease) both; }
+@keyframes ds-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.ds-d1 { animation-delay: 0.05s; }
+.ds-d2 { animation-delay: 0.12s; }
+.ds-d3 { animation-delay: 0.19s; }
+.ds-d4 { animation-delay: 0.26s; }
+.ds-d5 { animation-delay: 0.33s; }
+
+/* —— 载入旋转 —— */
+.ds-spinner {
+  width: 22px; height: 22px;
+  border: 2px solid var(--ds-hairline);
+  border-top-color: var(--ds-brand);
+  border-radius: 50%;
+  animation: ds-spin 0.7s linear infinite;
+}
+@keyframes ds-spin { to { transform: rotate(360deg); } }
+
+/* —— 文字工具 —— */
+.ds-title { font-size: 28px; font-weight: 800; color: var(--ds-ink-1); letter-spacing: -0.5px; }
+.ds-mono  { font-family: var(--ds-font-mono); letter-spacing: 0.5px; }
+.ds-clamp-2 {
+  display: -webkit-box; -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+}

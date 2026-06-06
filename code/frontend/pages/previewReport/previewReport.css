@@ -1,0 +1,236 @@
+.button_icon_style{
+	height: 20px; 
+	width: 20px; 
+	margin-left: 12%;
+	margin-top: 15px;
+}
+.button_text_style{
+	margin-top: 13px;
+	width: 60%;
+	text-align: center;
+}
+
+.send_report_button{
+	margin-left: 7%;
+	width:40%;
+	height:50px;
+	border-radius: 4px;
+	background: linear-gradient(135deg, #1FB877 0%, #00C2D7 100%);
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+	display: flex;
+}
+.save_report_button{
+	width: 40%;
+	height: 50px;
+	margin-left: 7%;
+	border-radius: 4px;
+	background: linear-gradient(135deg, #0A5CFF 0%, #00C2D7 100%);	
+	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.3);
+	display: flex;
+}
+.ct_report_handle_button{
+	display: flex;
+	margin-top: 10px;
+	margin-bottom: 100px;
+	font-size: 17px;
+	text-align: center;
+	color: white;
+}
+.ct_pic{
+	height: 130px;
+	width: 130px;
+}
+.ct_pic_result{
+	padding-left: 20px;
+	padding-top: 5px;
+	display: flex;
+	position: relative;
+}
+.no-image-tip{
+	width: 130px;
+	height: 130px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	border: 1px dashed #d8dee8;
+	border-radius: 6px;
+	background: #f8f9fb;
+	color: #888888;
+	font-size: 12px;
+	line-height: 1.5;
+	box-sizing: border-box;
+	padding: 10px;
+}
+.no-image-title{
+	display: block;
+	font-weight: 600;
+	color: #606975;
+}
+.no-image-desc{
+	display: block;
+	margin-top: 5px;
+	font-size: 10px;
+	line-height: 1.35;
+	color: #8a94a3;
+}
+.reanalyze-mini-btn{
+	margin-top: 8px;
+	min-width: 76px;
+	height: 24px;
+	padding: 0 8px;
+	border-radius: 6px;
+	background: #1677ff;
+	color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 11px;
+	font-weight: 600;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.reanalyze-mini-btn.disabled{
+	opacity: 0.55;
+}
+.image-container{
+	position: relative;
+	width: 130px;
+	height: 130px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.ct_pic_swiper{
+	height: 130px;
+	width: 130px;
+}
+/* swiper-item 必须设置尺寸 */
+.ct_pic_swiper swiper-item,
+.ct_pic_swiper .swiper-item{
+	height: 130px;
+	width: 130px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.image-counter{
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-size: 11px;
+	font-weight: bold;
+	z-index: 10;
+}
+.nav-arrow{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 10;
+	transition: all 0.3s;
+}
+.nav-arrow:active{
+	background: rgba(0, 0, 0, 0.8);
+	transform: translateY(-50%) scale(0.9);
+}
+.nav-arrow-left{
+	left: -10px;
+}
+.nav-arrow-right{
+	right: -10px;
+}
+.arrow-icon{
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 1;
+}
+.ct_report_main{
+	width: 95%;
+	margin-left: 2.5%;
+}
+/* 病人信息 第一行主体 */
+.prompt_text,.prime_ct_pic_prompt_text,.ct_pic_result_prompt_text,.imaging_finding_prompt_text{
+	margin-top: 20px;
+	width: 100%;
+	display: flex;
+}
+/* 病人信息的框框 */
+.patient_info_box,.prime_ct_pic_box,.ct_pic_result_box{
+	
+	margin-top: 5px;
+	background-color: white;
+	/* 字体 */
+	font-size: 12px;
+	line-height: 2.0;
+}
+.ct_report_header{
+	font-size: 20px;
+	text-align: center;
+	font-weight: 500;
+	padding-top: 20px;
+	padding-bottom: 0;
+}
+.preview_report_header{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 60px;
+	width: 100%;
+	padding: 0 15px;
+	background-color: white;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.navbar-back-btn {
+	background: #007aff !important;
+	color: #ffffff !important;
+	border: none !important;
+	border-radius: 8px !important;
+	padding: 8px 15px !important;
+	font-size: 14px !important;
+	height: auto !important;
+	line-height: normal !important;
+	margin-right: 10px !important;
+}
+
+.navbar-back-btn::after {
+	border: none !important;
+}
+
+.header-title {
+	flex: 1;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+}
+
+.vector_left_text{
+	display: none;
+}
+.vector_left_icon{
+	display: none;
+}
+
+.preview_report{
+	background-color: #CECECE;
+}
+.ct_report{
+	width: 100%;
+	padding-bottom: 10px;
+	background-color: white;
+}

@@ -1,0 +1,135 @@
+{
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [
+		/* {
+			"path": "pages/test/test05"
+		}, */
+		// 身份选择界面--病人or医生？
+		{
+			"path": "pages/selectIdentity/selectIdentity"
+		},
+		// 登录页面
+		{
+			"path": "pages/login/login"
+		},
+		// 注册页面
+		{
+			"path": "pages/register/register"
+		},
+	// AI聊天页面
+	{
+		"path": "pages/aiChat/aiChat"
+	},
+	// 医生患者聊天对话页面
+	{
+		"path": "pages/chat/chatDialog"
+	},
+		// 个人中心--反馈中心
+		{
+			"path": "pages/settings/feedback/feedback"
+		},
+		// 个人中心--系统通知
+		{
+			"path": "pages/settings/sysNotice/sysNotice"
+		},
+		// 个人中心--密码
+		{
+			"path": "pages/settings/updatePwd/updatePwd"
+		},
+	// 个人中心--账号
+	{
+		"path": "pages/settings/account/account"
+	},
+	// 档案完善页面
+	{
+		"path": "pages/completeProfile/completeProfile"
+	},
+	// 个人中心--关于我们
+	{
+		"path": "pages/settings/about/about"
+	},
+		// 医生端首页
+		{
+			"path": "pages/homeDoctor/homeDoctor"
+		},
+		// 患者端首页
+		{
+			"path": "pages/homePatient/homePatient"
+		},
+		// 病人端--个人中心
+		{
+			"path": "pages/personalCenterPatient/personalCenterPatient"
+		},
+		// 家属端--我的
+		{
+			"path": "pages/personalCenterFamily/personalCenterFamily"
+		},
+		// 病人端--查看自己检查记录里的CT报告(单个病人可能多次复诊，每次报告情况不同)
+		{
+			"path": "pages/ctReport/ctReport"
+		},
+		// 病人端--预览和下载最新CT报告的界面
+		{
+			"path": "pages/ctPreview/ctPreview"
+		},
+		// 病人端--查看自己的看病记录
+		{
+			"path": "pages/medicalRecord/medicalRecord"
+		},
+		{
+			"path": "pages/patient/bind-family"
+		},
+		//个人中心界面
+		{
+			"path": "pages/personalCenter/personalCenter"
+		},
+	//医生端--报告预览，预览没问题后，可以下载或发送给病人端
+	{
+		"path": "pages/previewReport/previewReport"
+	},
+		// 医生端--CT扫描功能。用于辅助脑瘤影像的诊断
+		{
+			"path": "pages/ctScanner/ctScanner"
+		},
+	// 医生端--病人管理界面，可以查看每个病人的报告
+	{
+		"path": "pages/managePatients/managePatients"
+	},
+	{
+		"path": "pages/family/index"
+	},
+	{
+		"path": "pages/family/chat-list"
+	},
+	{
+		"path": "pages/family/ai-assistant"
+	},
+	{
+		"path": "pages/family/profile"
+	},
+	{
+		"path": "pages/family/bind"
+	},
+	// 患者端--预约挂号页面
+	{
+		"path": "pages/appointment/appointment"
+	},
+	// 患者端--挂号独立页面
+	{
+		"path": "pages/registration/registration"
+	}
+	,
+	// 内嵌新闻详情页
+	{
+		"path": "pages/newsDetail/newsDetail"
+	}
+		
+	],
+	"globalStyle": {
+		"navigationStyle": "custom"
+		
+	},
+	"uniIdRouter": {}
+}

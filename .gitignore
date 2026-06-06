@@ -1,0 +1,91 @@
+# ===== Sensitive: Environment & Secrets =====
+.env
+.env.*
+!.env.example
+
+# ===== Database =====
+*.sqlite3
+*.db
+*.sql
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+venv/
+.venv/
+env/
+
+# ===== Media / Output (may contain sensitive medical data) =====
+code/output/
+code/backend/media/
+code/camera_captures/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.dcm
+*.nii
+*.nii.gz
+
+# ===== Node / Frontend =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===== HBuilderX / UniApp Build Artifacts =====
+unpackage/
+*.apk
+*.ipa
+*.wgt
+
+# ===== ML Models (large binary files) =====
+*.pth
+*.pt
+*.onnx
+*.h5
+*.pb
+*.ckpt
+*.bin
+*.safetensors
+code/image_predict/models/*
+data/
+image_predict/
+
+# ===== IDE / Editor =====
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*~
+.history/
+.hbuilderx/
+
+# ===== OS =====
+Thumbs.db
+Desktop.ini
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Django =====
+staticfiles/
+
+# ===== Test / Temp =====
+*.tmp
+*.temp
